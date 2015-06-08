@@ -1,2 +1,5 @@
 <h1>Edit Dish</h1>
-<% render 'form' %>
+<%= render 'form' %>
+
+<%= link_to 'Cancel', dishes_path %> |
+<%= link_to 'Delete', @dish, method: :delete, data: { confirm: 'Are you sure?' }, class: "bordered-link" %>

@@ -3,3 +3,12 @@
 <% @courses.each do |c| %>
 <p><%= "#{c.name}: #{c.list_dishes}" %></p>
 <% end %>
+
+<% (1..6).each do |n| %>
+  <h3> <%= @courses.find_by_id(n).name %></h3>
+  <% @courses.find_by_id(n).dishes.each do |d| %>
+    <div> <%= link_to "#{d.name}", edit_dish_path(d) %></div>
+    <div> <%= "#{d.description}" %></div>
+    <div> <%= "$#{d.price}" %></div>
+  <% end %>
+<% end %>

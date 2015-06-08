@@ -1,13 +1,37 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  course_id: 1
-  name: MyString
-  price: 9.99
-  description: MyString
+  course: :one
+  name: Eggs
+  price: 4.99
+  description: Scrambled or Fried
 
 two:
-  course_id: 1
-  name: MyString
-  price: 9.99
-  description: MyString
+  course: :one
+  name: Pancakes
+  price: 7.99
+  description: Blueberry or Chocolate Chip
+
+three:
+  course: :two
+  name: Sandwich
+  price: 8.99
+  description: BLT or Grilled Cheese
+
+four:
+  course: :two
+  name: Soup of the Day
+  price: 6.99
+  description: Cup or Bowl
+
+five:
+  course: :three
+  name: Steak
+  price: 12.99
+  description: Rare, Medium Well, or Burned
+
+six:
+  course: :three
+  name: Pasta
+  price: 10.99
+  description: White Sauce or Red Sauce

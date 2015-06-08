@@ -9,7 +9,7 @@
   <% @courses.find_by_id(n).dishes.each do |d| %>
     <div> <%= link_to "#{d.name}", edit_dish_path(d) %></div>
     <div> <%= "#{d.description}" %></div>
-    <div> <%= "$#{d.price}" %></div>
+    <div> <%= number_to_currency(d.price) %></div>
     <div> <%= link_to "Add to #{@courses.find_by_id(n).name}", new_dish_path(course_id: @courses.find_by_id(n).id) %>
   <% end %>
 <% end %>

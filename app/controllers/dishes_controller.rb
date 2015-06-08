@@ -1,13 +1,13 @@
 class DishesController < ApplicationController
   before_action :set_dish, only: [:show, :edit, :update, :destroy]
 
-
   def index
     @courses = Course.all
   end
 
   def new
-    @dish = Dish.new
+    @course_id = params[:course_id]
+    @dish = Dish.new(course_id: @course_id)
   end
 
   def edit
@@ -18,8 +18,7 @@ class DishesController < ApplicationController
   end
 
   def create
-    @dish = Dish.new(dish_params)
-
+    @dish = Dish.new(dish_params, course_id: params[:course_id])
     respond_to do |format|
       if @dish.save
         format.html { redirect_to dishes_path, notice: 'Dish was successfully created.' }

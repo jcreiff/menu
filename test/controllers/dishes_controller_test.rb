@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class DishesControllerTest < ActionController::TestCase
+  setup do
+    @dish = dishes(:one)
+  end
+
   test "should get index" do
     get :index
     assert_response :success
@@ -12,7 +16,7 @@ class DishesControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit
+    get :edit, id: @dish.id
     assert_response :success
   end
 

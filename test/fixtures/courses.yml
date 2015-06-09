@@ -8,3 +8,12 @@ two:
 
 three:
   name: Dinner
+
+four:
+  name: Sides
+
+five:
+  name: Beverages
+
+six:
+  name: Desserts

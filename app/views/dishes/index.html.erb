@@ -18,7 +18,7 @@
           <span class="badge"><%= number_to_currency(d.price) %></span>
         </p>
       <% end %>
-      <button type="button" class="btn btn-primary"><%= link_to "Add to #{@courses.find_by_id(1).name}",
+      <button type="button" class="btn btn-primary"><%= link_to "Add to Breakfast",
           new_dish_path(course_id: @courses.find_by_id(1).id) %></button>
     </div>
   </div>
@@ -34,8 +34,76 @@
           <span class="badge"><%= number_to_currency(d.price) %></span>
         </p>
       <% end %>
-      <button type="button" class="btn btn-primary"> <%= link_to "Add to #{@courses.find_by_id(2).name}",
+      <button type="button" class="btn btn-primary"> <%= link_to "Add to Lunch",
           new_dish_path(course_id: @courses.find_by_id(2).id) %></button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <%= image_tag image_url('meat-icon.png'), class: "menu-icon" %>
+    <div class="items">
+      <h3>Dinner</h3>
+      <% @courses.find_by_id(3).dishes.each do |d| %>
+        <p>
+          <%= link_to "#{d.name}", edit_dish_path(d) %>
+          <%= "#{d.description}" %>
+          <span class="badge"><%= number_to_currency(d.price) %></span>
+        </p>
+      <% end %>
+      <button type="button" class="btn btn-primary"><%= link_to "Add to Dinner",
+          new_dish_path(course_id: @courses.find_by_id(3).id) %></button>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <%= image_tag image_url('sides-icon.png'), class: "menu-icon" %>
+    <div class="items">
+      <h3>Sides</h3>
+      <% @courses.find_by_id(4).dishes.each do |d| %>
+        <p>
+          <%= link_to "#{d.name}", edit_dish_path(d) %>
+          <%= "#{d.description}" %>
+          <span class="badge"><%= number_to_currency(d.price) %></span>
+        </p>
+      <% end %>
+      <button type="button" class="btn btn-primary"> <%= link_to "Add to Sides",
+          new_dish_path(course_id: @courses.find_by_id(4).id) %></button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <%= image_tag image_url('dessert-icon.png'), class: "menu-icon" %>
+    <div class="items">
+      <h3>Desserts</h3>
+      <% @courses.find_by_id(5).dishes.each do |d| %>
+        <p>
+          <%= link_to "#{d.name}", edit_dish_path(d) %>
+          <%= "#{d.description}" %>
+          <span class="badge"><%= number_to_currency(d.price) %></span>
+        </p>
+      <% end %>
+      <button type="button" class="btn btn-primary"><%= link_to "Add to Desserts",
+          new_dish_path(course_id: @courses.find_by_id(5).id) %></button>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <%= image_tag image_url('bev-icon.png'), class: "menu-icon" %>
+    <div class="items">
+      <h3>Beverages</h3>
+      <% @courses.find_by_id(6).dishes.each do |d| %>
+        <p>
+          <%= link_to "#{d.name}", edit_dish_path(d) %>
+          <%= "#{d.description}" %>
+          <span class="badge"><%= number_to_currency(d.price) %></span>
+        </p>
+      <% end %>
+      <button type="button" class="btn btn-primary"> <%= link_to "Add to Beverages",
+          new_dish_path(course_id: @courses.find_by_id(6).id) %></button>
     </div>
   </div>
 </div>

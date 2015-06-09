@@ -14,3 +14,17 @@
  *= require_self
  *= require 'bootstrap'
  */
+
+button {
+  color: white;
+  clear: both;
+}
+
+.menu-icon {
+  height: 200px;
+  width: 200px;
+}
+
+.items {
+  float: right;
+}

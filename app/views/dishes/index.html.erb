@@ -1,29 +1,41 @@
-<h1>Joe's Diner</h1>
-<p id="notice"><%= notice %></p>
+<div class="page-header">
+  <h1>Joe's Diner <small>A Railstaurant</small></h1>
+</div>
 
+<% if notice %>
+  <div class="alert alert-info" role="alert"><%= notice %></div>
+<% end %>
 
 <div class="row">
   <div class="col-md-6">
-    <p class="lead">Breakfast</p>
-    <% @courses.find_by_id(1).dishes.each do |d| %>
-      <p>
-        <%= link_to "#{d.name}", edit_dish_path(d) %>
-        <%= "#{d.description}" %>
-        <span class="badge"><%= number_to_currency(d.price) %></span>
-      </p>
-    <% end %>
-    <p> <%= link_to "Add to #{@courses.find_by_id(1).name}", new_dish_path(course_id: @courses.find_by_id(1).id) %></p>
+    <%= image_tag image_url('breakfast-icon.png'), class: "menu-icon" %>
+    <div class="items">
+      <h3>Breakfast</h3>
+      <% @courses.find_by_id(1).dishes.each do |d| %>
+        <p>
+          <%= link_to "#{d.name}", edit_dish_path(d) %>
+          <%= "#{d.description}" %>
+          <span class="badge"><%= number_to_currency(d.price) %></span>
+        </p>
+      <% end %>
+      <button type="button" class="btn btn-primary"><%= link_to "Add to #{@courses.find_by_id(1).name}",
+          new_dish_path(course_id: @courses.find_by_id(1).id) %></button>
+    </div>
   </div>
 
   <div class="col-md-6">
-    <p class="lead">Lunch</p>
-    <% @courses.find_by_id(2).dishes.each do |d| %>
-      <p>
-        <%= link_to "#{d.name}", edit_dish_path(d) %>
-        <%= "#{d.description}" %>
-        <span class="badge"><%= number_to_currency(d.price) %></span>
-      </p>
-    <% end %>
-    <p> <%= link_to "Add to #{@courses.find_by_id(2).name}", new_dish_path(course_id: @courses.find_by_id(2).id) %></p>
+    <%= image_tag image_url('bread-icon.png'), class: "menu-icon" %>
+    <div class="items">
+      <h3>Lunch</h3>
+      <% @courses.find_by_id(2).dishes.each do |d| %>
+        <p>
+          <%= link_to "#{d.name}", edit_dish_path(d) %>
+          <%= "#{d.description}" %>
+          <span class="badge"><%= number_to_currency(d.price) %></span>
+        </p>
+      <% end %>
+      <button type="button" class="btn btn-primary"> <%= link_to "Add to #{@courses.find_by_id(2).name}",
+          new_dish_path(course_id: @courses.find_by_id(2).id) %></button>
+    </div>
   </div>
 </div>

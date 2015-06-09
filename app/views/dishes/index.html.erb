@@ -1,15 +1,29 @@
 <h1>Joe's Diner</h1>
 <p id="notice"><%= notice %></p>
-<% @courses.each do |c| %>
-<p><%= "#{c.name}: #{c.list_dishes}" %></p>
-<% end %>
 
-<% (1..6).each do |n| %>
-  <h3> <%= @courses.find_by_id(n).name %></h3>
-  <% @courses.find_by_id(n).dishes.each do |d| %>
-    <div> <%= link_to "#{d.name}", edit_dish_path(d) %></div>
-    <div> <%= "#{d.description}" %></div>
-    <div> <%= number_to_currency(d.price) %></div>
-    <div> <%= link_to "Add to #{@courses.find_by_id(n).name}", new_dish_path(course_id: @courses.find_by_id(n).id) %>
-  <% end %>
-<% end %>
+
+<div class="row">
+  <div class="col-md-6">
+    <p class="lead">Breakfast</p>
+    <% @courses.find_by_id(1).dishes.each do |d| %>
+      <p>
+        <%= link_to "#{d.name}", edit_dish_path(d) %>
+        <%= "#{d.description}" %>
+        <span class="badge"><%= number_to_currency(d.price) %></span>
+      </p>
+    <% end %>
+    <p> <%= link_to "Add to #{@courses.find_by_id(1).name}", new_dish_path(course_id: @courses.find_by_id(1).id) %></p>
+  </div>
+
+  <div class="col-md-6">
+    <p class="lead">Lunch</p>
+    <% @courses.find_by_id(2).dishes.each do |d| %>
+      <p>
+        <%= link_to "#{d.name}", edit_dish_path(d) %>
+        <%= "#{d.description}" %>
+        <span class="badge"><%= number_to_currency(d.price) %></span>
+      </p>
+    <% end %>
+    <p> <%= link_to "Add to #{@courses.find_by_id(2).name}", new_dish_path(course_id: @courses.find_by_id(2).id) %></p>
+  </div>
+</div>

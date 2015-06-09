@@ -52,6 +52,55 @@
           new_dish_path(course_id: @courses.find_by_name("Dinner").id) %></button>
     </div>
   </div>
+  
+  <div class="col-md-6">
+    <%= image_tag image_url('sides-icon.png'), class: "menu-icon" %>
+    <div class="items">
+      <h3>Sides</h3>
+      <% @courses.find_by_id(4).dishes.each do |d| %>
+        <p>
+          <span class="dish"><%= link_to "#{d.name}", edit_dish_path(d) %></span>
+          <span class="description"><%= "#{d.description}" %></span>
+          <span class="badge"><%= number_to_currency(d.price) %></span>
+        </p>
+      <% end %>
+      <button type="button" class="btn btn-default"> <%= link_to "Add to Sides",
+          new_dish_path(course_id: @courses.find_by_id(4).id) %></button>
+    </div>
+  </div>
+</div>
 
+<div class="row">
+  <div class="col-md-6">
+    <%= image_tag image_url('dessert-icon.png'), class: "menu-icon" %>
+    <div class="items">
+      <h3>Desserts</h3>
+      <% @courses.find_by_id(5).dishes.each do |d| %>
+        <p>
+          <span class="dish"><%= link_to "#{d.name}", edit_dish_path(d) %></span>
+          <span class="description"><%= "#{d.description}" %></span>
+          <span class="badge"><%= number_to_currency(d.price) %></span>
+        </p>
+      <% end %>
+      <button type="button" class="btn btn-default"><%= link_to "Add to Desserts",
+          new_dish_path(course_id: @courses.find_by_id(5).id) %></button>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <%= image_tag image_url('bev-icon.png'), class: "menu-icon" %>
+    <div class="items">
+      <h3>Beverages</h3>
+      <% @courses.find_by_id(6).dishes.each do |d| %>
+        <p>
+          <span class="dish"><%= link_to "#{d.name}", edit_dish_path(d) %></span>
+          <span class="description"><%= "#{d.description}" %></span>
+          <span class="badge"><%= number_to_currency(d.price) %></span>
+        </p>
+      <% end %>
+      <button type="button" class="btn btn-default"> <%= link_to "Add to Beverages",
+          new_dish_path(course_id: @courses.find_by_id(6).id) %></button>
+    </div>
+  </div>
 
 </div>

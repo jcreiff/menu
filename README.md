@@ -12,3 +12,6 @@ updates when inventory changes.
 * Credit to [Locally Preserved](www.locallypreserved.com) for the images.
 * Link to [Heroku App](http://floating-castle-4546.herokuapp.com/)
 * Link to [Workflow Diagram](https://www.lucidchart.com/invitations/accept/a81ff53d-927e-4456-9590-71727fdda1e1)
+
+
+######*Assignment from Week 6 of The Iron Yard's Ruby on Rails course (Durham)*
